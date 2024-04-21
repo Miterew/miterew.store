@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
 
 .slider {
   width: 100%;
@@ -8,18 +12,21 @@
 .slider__img_overlay {
   background: url(/img/slider_3.png);
   background-size: cover;
-  height: 300px;
+  height: 600px;
+  width: 100%;
 }
 
 .slider__text {
   display: flex;
-  width: 50%;
+  /* width: 50%; */
+  height: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .slider__text h1 {
+  font-size: xx-large;
   color: aliceblue;
   font-family: "Open Sans", sans-serif;
 }
@@ -38,6 +45,7 @@
 
 .about {
   display: flex;
+  margin: 0 15%;
 }
 
 .about__text {
@@ -59,7 +67,7 @@
   margin: 10px 0;
   display: flex;
   flex-direction: column;
-  width: 350px;
+  width: 550px;
   border: 1px solid;
   align-items: center;
 }
