@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
 
-html, body {
+html, body, p {
   margin: 0;
   padding: 0;
 }
@@ -10,7 +10,7 @@ html, body {
 }
 
 .slider__img_overlay {
-  background: url(/img/slider_3.png);
+  background: url(/img/slider_2.jpg);
   background-size: cover;
   height: 600px;
   width: 100%;
@@ -18,7 +18,14 @@ html, body {
 
 .slider__text {
   display: flex;
-  /* width: 50%; */
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider__text {
+  display: flex;
   height: 100%;
   flex-direction: column;
   justify-content: center;
@@ -72,16 +79,21 @@ html, body {
   align-items: center;
 }
 
+
 .products__image {
   width: 100%;
 }
 
 .product__title {
   text-align: center;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 .product_text {
   text-align: center;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 .footer__wrapper {
@@ -89,38 +101,73 @@ html, body {
   margin: 0;
   justify-content: center;
   align-items: center;
-  background-color: black;
+
+  /* background-color: black; */
 }
 
 .footer__contact {
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-content: space-between;
 }
 
-.footer__ip {
+.footer__line {
+  margin-top: 15%;
+  width: 200px;
+  border-top: 2px solid silver;
+}
+
+.footer__contact-text {
+  margin-top: 15%;
+  font-size: xx-large;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.footer__info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__adress {
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
   margin-top: 10px;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: whitesmoke;
+  padding-top: 15px;
+}
+
+.footer__tel {
+  padding-top: 15px;
 }
 
 .footer__tel a {
-  text-transform: lowercase;
-  color: whitesmoke;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: black;
   text-decoration: none;
+}
+
+.footer__email {
+  padding-top: 15px;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .footer__email a {
-  text-transform: lowercase;
-  color: whitesmoke;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #ee7505;
   text-decoration: none;
 }
 
+.footer__ip {
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin-top: 10px;
+  padding-top: 30px;
+}
+
 .footer__inn {
-  color: whitesmoke;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding-top: 15px;
 }
 
 .footer__ogrn {
-  color: whitesmoke;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding-top: 15px;
 }
