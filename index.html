@@ -1,276 +1,349 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Шпик свиной от производителя - ИП Митерев И. С.</title>
-    <link href="style.css" rel="stylesheet" />
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поставщик сала оптом - Митерев И.С.</title>
+    <meta name="description" content="Отличный выбор для тех, кто хочет купить сало оптом">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Базовые стили */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif; /* Применяем новый шрифт */
+            color: #000;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
 
-  <body>
-    <!-- начальный экран -->
-    <section>
-      <div class="slider">
-        <div class="slider__img_overlay">
-          <div class="slider__text">
+        /* Главный экран (Hero) */
+        .hero {
+            position: relative;
+            min-height: 550px;
+            background-color: #de692f;
+            background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), 
+                              url('img/main2.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 40px 20px;
+        }
 
-            <h1>САЛО И ГРУДИНКА</h1>
-            <h2>ОПТОМ ОТ ПРОИЗВОДИТЕЛЯ</h2>
-            <h3>минимальная партия 500 кг</h3>
-          
-          </div>
-          
+        .hero-content {
+            max-width: 700px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 35px;
+            opacity: 0.9;
+        }
+
+        .btn-call {
+            display: inline-block;
+            background-color: #d45252;
+            color: #fff;
+            padding: 20px 50px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-call:hover {
+            background-color: #b34242;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Сетка товаров */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px 30px;
+        }
+
+        .product-card {
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .img-wrapper {
+            position: relative;
+            padding-bottom: 100%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            background-color: #f7f7f7;
+            border-radius: 4px;
+        }
+
+        .img-wrapper img {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .product-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px; left: 15px;
+            background: #ff4a4a;
+            color: #fff;
+            padding: 6px 12px;
+            font-size: 11px;
+            font-weight: 700;
+            z-index: 3;
+            letter-spacing: 1px;
+        }
+
+        .product-title {
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            min-height: 46px;
+            line-height: 1.3;
+        }
+
+        .product-descr {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        /* Футер Контакты */
+        .footer-contacts-block {
+            padding: 100px 20px;
+            background-color: #fcfcfc;
+            text-align: center;
+            color: #222;
+            border-top: 1px solid #eee;
+        }
+
+        .footer-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .contacts-info {
+            font-size: 17px;
+            margin-bottom: 60px;
+            font-weight: 400;
+        }
+
+        .contacts-info p {
+            margin: 20px 0;
+        }
+
+        .contacts-info a {
+            color: #d45252;
+            text-decoration: none;
+            font-weight: 700;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .contacts-info a:hover {
+            border-bottom-color: #d45252;
+        }
+
+        .footer-description {
+            font-size: 14px;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 40px;
+            line-height: 1.7;
+        }
+
+        .footer-description strong {
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 960px) {
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero h1 { font-size: 32px; }
+            .container { padding: 60px 20px; }
+        }
+
+        @media (max-width: 640px) {
+            .products-grid { grid-template-columns: 1fr; }
+            .hero { min-height: 450px; }
+            .hero h1 { font-size: 26px; }
+            .footer-title { font-size: 22px; }
+            .footer-contacts-block { padding: 60px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Сало и грудинка оптом<br>от производителя</h1>
+            <p>Приглашаем к сотрудничеству дистрибьюторов, оптовые компании и розничные сети.</p>
+            <a href="tel:+79189453442" class="btn-call">Позвонить нам</a>
         </div>
-          
-      </div>
     </section>
 
-<!-- Нужно в слайдере сделать адптивность под высоту изображения и 
-      чтоб текст был по вертикали выравнен
--->
-
-
-    <section> <!-- блок с текстом -->
-      <div class="about">
+    <main class="container">
+        <h2 class="section-title">Наша продукция</h2>
         
-        <p class="about__text">
-          Наслаждайтесь натуральным вкусом и безупречным качеством нашей
-          продукции. Мы с гордостью производим продукцию, полученную из отборного
-          сырья, без добавления вредной химии, чтобы вы могли насладиться
-          аутентичным вкусом в каждом кусочке.
-        </p>
-      </div>
-    </section> <!-- Конец блок с текстом -->
-
-    <section> <!-- блок с текстом -->
-      <div class="our_production">
-        <h3>Наша продукция</h3>
-      </div>
-    </section>
-
-
-
-    <section>
-      <div class="products">
-
-        <div class="products__card">
-          <img src="img/banki.jpg" alt="Сало бутербродное" class="products__image">
-          <div class="product__title">
-            <h3>Сало бутербродное</h3>
-          </div>
-          <p class="product_text">
-            Вымоченный в рассоле молотый соленый шпик с чесночком и укропом.
-          </p>
-        </div>
-
-
-
-        <div class="products__card">
-          <img src="img/grudinka.jpg" alt="Сало бутербродное" class="products__image">
-          <div class="product__title">
-            <h3>Грудинка свиная</h3>
-          </div>
-          <p class="product_text">
-            Вкуснейший соленый шпик с мясной прослойкой, приправленный для
-                пикантности молотым чесноком с укропом.
-          </p>
-        </div>
-
-
-        <div class="products__card">
-          <img src="img/rulet.jpg" alt="Рулет из грудинки" class="products__image">
-          <div class="product__title">
-            <h3>Рулет из грудинки</h3>
-          </div>
-          <p class="product_text">
-            Два нежнейших кусочка соленого сала, вымоченных в рассоле
-                связаны нитью. Между ними прослойка из молотого чеснока и мелко
-                нарезанного укропа.
-          </p>
-        </div>
-
-
-        <div class="products__card">
-          <img src="img/lavrushka.jpg" alt="Шпик соленый с лаврушкой и черным перцем" class="products__image">
-          <div class="product__title">
-            <h3>Шпик соленый с лаврушкой и черным перцем</h3>
-          </div>
-          <p class="product_text">
-            Классический шпик сухого посола, приправленный дробленным черным 
-            перцем и лавровым листом.
-          </p>
-        </div>
-
-
-
-        <div class="products__card">
-          <img src="img/kopchenii.jpg" alt="Шпик копченый" class="products__image">
-          <div class="product__title">
-            <h3>Шпик копченый</h3>
-          </div>
-          <p class="product_text">
-            Яркий вкус и аромат копченого сала, предварительно выдержанного
-                в соли и специях сложно перепутать и невозможно забыть.
-          </p>
-        </div>
-
-
-
-        <div class="products__card">
-          <img src="img/vengerski.jpg" alt="Шпик по венгерски" class="products__image">
-          <div class="product__title">
-            <h3>Шпик по венгерски</h3>
-          </div>
-          <p class="product_text">
-            Нежный обесшкуренный соленый шпик, вымоченный в рассоле со всех
-                сторон обвален в остром красном перце, что даёт ему незабываемый
-                вкус и аромат.
-          </p>
-        </div>
-
-
-
-        <div class="products__card">
-          <img src="img/zakuska.jpg" alt="Закуска деревенская" class="products__image">
-          <div class="product__title">
-            <h3>Закуска деревенская</h3>
-          </div>
-          <p class="product_text">
-            Нежный обесшкуренный соленый шпик, вымоченный в рассоле с
-                молотым чесноком и укропом сверху в комбинации с дробленным
-                черным перцем снизу.
-          </p>
-        </div>
-
-
-
-
-        <div class="products__card">
-          <img src="img/chernii.jpg" alt="Шпик по-домашнему в черном перце" class="products__image">
-          <div class="product__title">
-            <h3>Шпик по-домашнему в черном перце</h3>
-          </div>
-          <p class="product_text">
-            Нежный обесшкуренный соленый шпик, вымоченный в рассоле со всех
-                сторон обвален в дробленом черном перце, что даёт ему
-                неповторимый аромат и незабываемый вкус.
-          </p>
-        </div>
-
-
-        <div class="products__card">
-          <img src="img/belorus.jpg" alt="Шпик по-белорусски со специями" class="products__image">
-          <div class="product__title">
-            <h3>Шпик по-белорусски со специями</h3>
-          </div>
-          <p class="product_text">
-            Нежнейший соленый шпик, вымоченный в рассоле с приправами
-                посыпается яркой смесью из перцев и чеснока, что дает
-                потрясающий сладковато-острый вкус.
-          </p>
-        </div>
-
-
-
-        <div class="products__card">
-          <img src="img/kubanskii.jpg" alt="Шпик кубанский" class="products__image">
-          <div class="product__title">
-            <h3>Шпик кубанский</h3>
-          </div>
-          <p class="product_text">
-            Нежный обесшкуренный соленый шпик, вымоченный в рассоле со
-                смесью из восхитительных перцев сверху в комбинации с аджикой
-                подарят бурю гастрономических эмоций любителям шпика.
-          </p>
-        </div>
-
-
-        <div class="products__card">
-          <img src="img/gorchitsa.jpg" alt="Закуска хуторская с горчичкой" class="products__image">
-          <div class="product__title">
-            <h3>Закуска хуторская с горчичкой</h3>
-          </div>
-          <p class="product_text">
-            Нежный обесшкуренный соленый шпик, вымоченный в рассоле
-                приправлен пикантной горчицей.
-          </p>
-        </div>
-
-
-        <div class="products__card">
-          <img src="img/grudvspec.jpg" alt="Грудинка в специях" class="products__image">
-          <div class="product__title">
-            <h3>Грудинка в специях</h3>
-          </div>
-          <p class="product_text">
-            3 нежнейших кусочка соленого сала, вымоченных в рассоле вручную
-                связаны нитью. Верхний слой приправлен аджикой, нижний -
-                чесноком с укропом. Сало посередине обесшкуренное.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-
-    <footer>
-      <div class="border-bottom border-width"></div>
-      <div class="footer__wrapper">
-        <div class="footer__contact">
-
-            <div class="footer__line"></div>
-
-
-            <div class="footer__contact-text">
-              <p>Контакты</p>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="img-wrapper">
+                    <div class="badge">ЛИДЕР ПРОДАЖ</div>
+                    <img src="img/rulet.jpg" alt="Рулет из грудинки">
+                </div>
+                <div class="product-title">Рулет из грудинки</div>
+                <div class="product-descr">Два нежнейших кусочка соленого сала, вымоченных в рассоле связаны нитью. Между ними прослойка из чеснока и укропа.</div>
             </div>
 
+            <div class="product-card">
+                <div class="img-wrapper">
+                    <img src="img/lavr.jpg" alt="Шпик соленый">
+                </div>
+                <div class="product-title">Шпик соленый с лаврушкой</div>
+                <div class="product-descr">Классический шпик сухого посола, приправленный дробленным черным перцем и лавровым листом.</div>
+            </div>
 
-              <div class="footer__adress">
-                <p><b>Адрес:</b> Краснодар, ул. Вишняковой, д. 2</p>
-              </div>              
-              
-              <div class="footer__tel">
-                <p><a href="tel:+79189453442"><b>Телефон:</b> +7 (918) 945-34-42</a></p>
-              </div>
+            <div class="product-card">
+                <div class="img-wrapper">
+                    <img src="img/grudinka.jpg" alt="Грудинка свиная">
+                </div>
+                <div class="product-title">Грудинка свиная</div>
+                <div class="product-descr">Вкуснейший соленый шпик с мясной прослойкой, приправленный для пикантности чесноком с укропом.</div>
+            </div>
 
-              
-              <div class="footer__email">
-                <p><b>Email:</b><a href="mailto:ip.miterev@mail.ru"> ip.miterev@mail.ru</a></p>
-              </div>
+            <div class="product-card">
+                <div class="img-wrapper">
+                    <img src="img/kopcenii.jpg" alt="Шпик копченый">
+                </div>
+                <div class="product-title">Шпик копченый</div>
+                <div class="product-descr">Яркий вкус и аромат копченого сала, предварительно выдержанного в соли и специях.</div>
+            </div>
 
+            <div class="product-card">
+                <div class="img-wrapper">
+                    <img src="img/banka-chesnok.jpg" alt="Сало бутербродное">
+                </div>
+                <div class="product-title">Сало бутербродное</div>
+                <div class="product-descr">Измельченый до состояния пасты шпик соленый с чесноком и укропом.</div>
+            </div>
 
-              <div class="footer__email">
-                <p>
-                  
-                  <a href="https://wa.me/79189453442?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%3A%20">WhatsApp</a> 
-                  | 
-                  <a href="tg://resolve?domain=miterew">Telegram</a>
-                
-                
-                
-                </p>
-              </div>
-              
-              <div class="footer__ip">
-                <p><b>ИП Митерев И. С.</b></p>
-              </div>
-              
-              <div class="footer__inn">
-                <p>ИНН: 183701431565</p>
-              </div>
+            <div class="product-card">
+                <div class="img-wrapper">
+                    <img src="img/vengerski.jpg" alt="Шпик по венгерски">
+                </div>
+                <div class="product-title">Шпик по-венгерски</div>
+                <div class="product-descr">Копченый, соленый шпик со всех сторон обвален в остром красном перце.</div>
+            </div>
 
-              <div class="footer__ogrn">
-              <p>ОГРНИП: 320237500286072</p>
-              </div>
+            <!-- <div class="product-card">
+                <div class="img-wrapper">
+                    <img src="img/zakuska.jpg" alt="Закуска деревенская">
+                </div>
+                <div class="product-title">Закуска деревенская</div>
+                <div class="product-descr">Соленый шпик с молотым чесноком и укропом сверху и дробленным черным перцем снизу.</div>
+            </div> -->
 
+            <div class="product-card">
+                <div class="img-wrapper">
+                    <img src="img/domashnemu.jpg" alt="Шпик по-домашнему">
+                </div>
+                <div class="product-title">Шпик по-домашнему</div>
+                <div class="product-descr">Копченый, соленый шпик со всех сторон обвален в черном перце.</div>
+            </div>
+
+            <div class="product-card">
+                <div class="img-wrapper">
+                    <img src="img/belaruski.jpg" alt="Шпик по-белорусски">
+                </div>
+                <div class="product-title">Шпик по-белорусски</div>
+                <div class="product-descr">Вымоченный в бочке шпик, посыпанный сухим чесноком и смесью перцев.</div>
+            </div>
         </div>
+    </main>
 
+    <section class="footer-contacts-block">
+        <div class="footer-container">
+            <h2 class="footer-title">Контакты</h2>
+            
+            <div class="contacts-info">
+                <p>
+                    <strong>Адрес</strong>: г. Краснодар, ул. Вишняковой, д. 2<br>
+                    <strong>Телефон:</strong> <a href="tel:+79189453442">+7 918 945 34 42</a><br>
+                    <strong>Email:</strong> <a href="mailto:ip.miterev@mail.ru">ip.miterev@mail.ru</a><br>
+                    <a href="https://wa.me/79189453442" target="_blank">WhatsApp</a> | 
+                    <a href="tg://resolve?domain=miterew">Telegram</a>
+                </p>
+                
+                <p>
+                    ИП Митерев И. С.<br>
+                    <strong>ИНН</strong>: 183701431565<br>
+                    <strong>ОГРНИП</strong>: 320237500286072
+                </p>
+            </div>
 
-      
-      </div>
-
-    </footer>
-
-  </body>
+            <div class="footer-description">
+                Если вы хотите купить <strong>сало оптом соленое</strong> или сырое, то обратите внимание на нашу компанию — мы производим качественную продукцию уже более 10 лет. У нас вы можете купить <strong>сало оптом в Москве</strong>, <strong>в Краснодаре</strong> или <strong>в Крыму</strong>.
+            </div>
+        </div>
+    </section>
+</body>
 </html>
